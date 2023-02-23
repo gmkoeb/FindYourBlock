@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Lato:wght@300;400&family=Roboto:wght@100;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+      rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>FindYourBlock</title>
+  </head>
+  <body>
+    <header
+      class="bg-slate-100 text-center h-[60vh] flex flex-row justify-center max-sm:pl-[5rem]"
+    >
+      <img class="w-1/4 mb-auto" src="/assets/ilustra-01.svg" alt="" />
+      <div class="flex flex-col">
+        <div class="mt-24">
+          <h4 class="text-red-600 mb-5 font-medium">FIND YOUR BLOCK</h4>
+          <h1 class="font-bold text-[3rem] max-sm:text-[2rem]">
+            Encontre os <span class="text-violet-600">melhores blocos</span> de
+            carnaval de 2023
+          </h1>
+        </div>
+        <div
+          class="flex flex-row bg-white w-max px-[5rem] h-max py-11 my-auto rounded-lg searchbar"
+        >
+          <div class="m-auto">
+            <label for="input-search" class="image-input text-[1.2rem]">
+              <input
+                class="bg-violet-100 mr-6 w-[30rem] h-14 rounded-md pl-[3.7rem] -ml-5 pr-5"
+                type="search"
+                name="input-search"
+                id="input-search"
+                placeholder="Pesquise por nome"
+                onkeyup="filterByName()"
+              />
+            </label>
+            <label class="select absolute mt-3 ml-5 w-8" for="volvo">
+                  <img class="top-0 right-0 bottom-0 left-0 location" src="./assets/location.svg" alt="">
+            </label>
+            <select
+              class="pl-[3.7rem] mr-6 w-[30rem] h-14 bg-violet-100 rounded-md text-gray-500 text-[1.3rem] max-md:w-[15vw]"
+              name="select"
+              id="select"
+              onchange="filterByCity()"
+            >
+              <option class="" value="volvo">Selecione uma cidade</option>
+              <option value="São Paulo - SP">São Paulo - SP</option>
+              <option value="Florianopólis - SC">Florianopólis - SC</option>
+              <option value="Curitiba - PR">Curitiba - PR</option>
+              <option value="Salvador - BA">Salvador - BA</option>
+              <option value="Rio de Janeiro - RJ">Rio de Janeiro - RJ</option>
+              <option value="Porto Alegre - RS">Porto Alegre - RS</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <img class="w-1/2 mt-auto relative" src="/assets/ilustra-02.svg" alt="" />
+    </header>
+    <div class="flex flex-row justify-between mt-[6rem] mx-9">
+      <h2 class="font-bold text-[3rem] pl-4">Blocos recomendados</h2>
+      <div class="bg-slate-100 flex flex-row items-center h-16 rounded-lg w-max px-6 gap-6 max-sm:hidden">
+        <button class="h-11 bg-violet-600 w-24 rounded-lg text-white">LISTA</button>
+        <button class="h-11 w-24 rounded-lg font-bold text-violet-600">MAPA</button>
+      </div>
+    </div>  
+    <div id="block-cards" class="w-[100vw] mt-11 mb-[7rem]">
+    </div>      
+    <script defer type="text/javascript" src="main.js"></script>
+  </body>
+</html>
